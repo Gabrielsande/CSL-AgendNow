@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avaliação da Empresa</title>
+  <link rel="stylesheet" href="styleDashboard2.css" />
+</head>
+<body>
+
+  <!-- Botão de modo escuro -->
+  <button id="darkModeToggle">🌙 Modo Escuro</button>
+
+  <div class="container">
+    <div class="company-section">
+      <div class="company-info">
+        <h1>Informações da Empresa</h1>
+        <p><strong>Nome:</strong> Empresa Exemplo Ltda</p>
+        <p><strong>Localização:</strong> Rua das Flores, 123 - São Paulo, SP</p>
+        <p><strong>Contato:</strong> (11) 91234-5678</p>
+
+        <!-- Ícones sociais -->
+        <div class="social-icons">
+          <a href="https://wa.me/5511912345678" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+          </a>
+          <a href="https://www.instagram.com/seuusuario" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+          </a>
+        </div>
+
+        <!-- Botão da Agenda -->
+        <button id="openAgendaBtn" class="agenda-button">📅 Abrir Agenda</button>
+      </div>
+
+      <div class="company-logo-container">
+        <img src="imgDashboard2/logoDashboard2.png" alt="Logo Agendfy" class="company-logo-large">
+      </div>
+    </div>
+
+    <h2>Deixe sua Avaliação</h2>
+    <form id="ratingForm">
+      <div class="star-rating">
+        <span class="star" data-value="1">☆</span>
+        <span class="star" data-value="2">☆</span>
+        <span class="star" data-value="3">☆</span>
+        <span class="star" data-value="4">☆</span>
+        <span class="star" data-value="5">☆</span>
+      </div>
+      <textarea id="comment" rows="4" placeholder="Escreva o motivo da sua avaliação..." required></textarea>
+      <button type="submit">Enviar Avaliação</button>
+    </form>
+
+    <h2>Avaliações Recebidas</h2>
+    <div id="ratingsList"></div>
+  </div>
+
+  <!-- Modal da Agenda -->
+  <div id="agendaModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Escolha um horário:</h3>
+      <div class="schedule">
+        <button class="schedule-time">09:00</button>
+        <button class="schedule-time">10:00</button>
+        <button class="schedule-time">11:00</button>
+        <button class="schedule-time">14:00</button>
+        <button class="schedule-time">15:00</button>
+      </div>
+
+      <!-- Serviços e Pagamento -->
+      <div id="serviceDetails" class="hidden">
+        <h4>Serviços disponíveis:</h4>
+        <ul>
+          <li>Corte de Cabelo - R$ 40</li>
+          <li>Barba - R$ 25</li>
+          <li>Combo Corte + Barba - R$ 60</li>
+        </ul>
+        <p>Escaneie para pagar:</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=PagamentoExemplo" alt="QR Code para pagamento" class="qr-code">
+      </div>
+    </div>
+  </div>
+
+  <script src="scriptDashboard2.js"></script>
+</body>
+</html>
