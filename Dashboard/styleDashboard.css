@@ -1,61 +1,56 @@
-/* Reset e estrutura */
+/* RESET E BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Título do filtro acima dos cards */
-.filtro-titulo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #0056b3; /* Azul padrão da navbar */
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-  user-select: none;
-}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
   background: linear-gradient(135deg, #004aad 0%, #005ee3 100%);
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navbar */
-.navbar {
+header {
+  background-color: #ffffff;
+  padding: 0px 0; /* Menor altura */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  color: #fff;
-  height: 80px;
-  overflow: visible;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: space-between;
+  height: 85px;
 }
 
 .logo img {
-  height: 120px;
+  height: auto;
+  max-height: 170px; /* Aumentado */
   width: auto;
-  display: block;
   object-fit: contain;
-  margin-top: -20px;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
 
-.nav-links a {
-  color: black;
+.nav a {
+  color: #000000;
   text-decoration: none;
-  transition: color 0.3s;
-  font-weight: 500;
+  margin-left: 2px; /* Menor espaço */
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #ffd700;
+.nav a:hover,
+.nav a:focus {
+  color: #ffcc00;
 }
+
 .suporte {
   background-color: #25d366;
   padding: 8px 15px;
@@ -63,7 +58,7 @@ body {
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
   transition: background-color 0.3s ease;
 }
@@ -72,19 +67,13 @@ body {
 .suporte:focus {
   background-color: #1ebe57;
 }
-.btn-login {
-  padding: 0.5rem 1rem;
-  background-color: #ffd700;
-  color: #0056b3;
-  border-radius: 4px;
-  font-weight: bold;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.btn-login:hover {
-  background-color: #ffc107;
-}
-
-/* Dark mode toggle */
+/* DARK MODE TOGGLE */
 #dark-mode-toggle {
   position: fixed;
   bottom: 20px;
@@ -106,7 +95,7 @@ body {
   background-color: #555;
 }
 
-/* Filtros */
+/* BOTÕES DE FILTRO */
 .service-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -124,8 +113,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -139,7 +128,7 @@ body {
   height: 50px;
 }
 
-/* Cards */
+/* CARDS */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -150,8 +139,8 @@ body {
 
 .card {
   width: 250px;
-  padding: 1rem;
   background-color: #fff;
+  padding: 1rem;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -184,8 +173,8 @@ body {
   color: #fff;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
@@ -193,28 +182,12 @@ body {
   background-color: #003d80;
 }
 
-/* Dark Mode */
-body.dark-mode {
-  background-color: #222;
-  color: #eee;
-}
-
-body.dark-mode .card {
-  background-color: #333;
-  color: #eee;
-}
-
-body.dark-mode .navbar,
-body.dark-mode footer {
-  background-color: #111;
-}
-
-/* Footer */
+/* FOOTER */
 footer {
   background-color: #002e7a;
   color: #fff;
-  padding: 1rem 0;
   text-align: center;
+  padding: 1rem 0;
   width: 100%;
 }
 
@@ -238,4 +211,37 @@ footer {
 
 .footer-links a:hover {
   color: #ffc107;
+}
+
+/* DARK MODE CONFIGURAÇÕES */
+body.dark-mode {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-mode .card {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark-mode .navbar,
+body.dark-mode footer {
+  background-color: #111;
+}
+
+body.dark-mode .nav-links a {
+  color: #eee;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: #ffd700;
+}
+
+body.dark-mode .btn-agendar {
+  background-color: #ffd700;
+  color: #000;
+}
+
+body.dark-mode .btn-agendar:hover {
+  background-color: #e6c200;
 }

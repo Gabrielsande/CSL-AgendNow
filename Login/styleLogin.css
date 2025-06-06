@@ -137,27 +137,23 @@ body {
 
 /* Logo no topo esquerdo */
 .logo-topo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
+ display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 85px;
 }
 
 /* Quadrado branco fixo */
 .logo-background {
-  width: 100px;
-  height: 50px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 0 10px var(--highlight);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: auto;
+  max-height: 170px; /* Aumentado */
+  width: auto;
+  object-fit: contain;
 }
 
 /* Imagem da logo maior */
 .logo-img {
-  max-width: 190%;
-  max-height: 190%;
+  width:180px ;
+  height: 180px;
   object-fit: contain;
 }

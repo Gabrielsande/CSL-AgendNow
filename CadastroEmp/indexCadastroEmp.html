@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="styleCadastroEmp.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+ 
+  <label class="switch">
+  <input type="checkbox" id="theme-toggle-checkbox">
+  <span class="slider"></span>
+  
+</label>
+
+
+  <div class="form-wrapper">
+    <div class="form-card">
+      <div class="logo-wrapper">
+        <img src="imgCadastroEmp/logo.png" alt="Logo Agendify" class="logo">
+        <h1 class="logo-text">AgendNow</h1>
+      </div>
+
+      <h1>Cadastro</h1>
+
+      <form>
+        <fieldset>
+          <legend>Informações Básicas</legend>
+          <input type="text" placeholder="Nome da Empresa" required>
+          <input type="text" placeholder="CNPJ" required>
+          <input type="text" placeholder="Endereço completo" required>
+          <input type="tel" placeholder="Telefone" required>
+          <input type="email" placeholder="E-mail" required>
+        </fieldset>
+
+        <!-- DESCRIÇÃO -->
+        <fieldset>
+          <legend>Sobre a Empresa</legend>
+          <textarea placeholder="Descrição da Empresa" required></textarea>
+          <textarea placeholder="Missão"></textarea>
+          <textarea placeholder="Visão"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Serviços</legend>
+          <textarea placeholder="Lista de serviços" required></textarea>
+          <input type="text" placeholder="Categorias">
+          <textarea placeholder="Preços (se aplicável)"></textarea>
+          <input type="text" placeholder="Horários de funcionamento">
+        </fieldset>
+
+        <fieldset>
+          <legend>Informações do Profissional</legend>
+          <input type="text" placeholder="Nome do responsável">
+          <input type="text" placeholder="Cargo ou função">
+          <textarea placeholder="Experiência e qualificações"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Mídia</legend>
+          <label>Logotipo: <input type="file"></label>
+          <label>Fotos do espaço: <input type="file" multiple></label>
+          <label>Vídeo promocional: <input type="file"></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Avaliações</legend>
+          <textarea placeholder="Depoimentos de clientes"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Políticas</legend>
+          <textarea placeholder="Política de cancelamento"></textarea>
+          <textarea placeholder="Termos de serviço e privacidade"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Redes Sociais</legend>
+          <input type="url" placeholder="Facebook">
+          <input type="url" placeholder="Instagram">
+          <input type="url" placeholder="LinkedIn">
+        </fieldset>
+
+  
+        <fieldset>
+          <legend>Certificações</legend>
+          <textarea placeholder="Certificações e licenças"></textarea>
+        </fieldset>
+
+  
+        <fieldset>
+          <legend>Formas de Pagamento</legend>
+          <textarea placeholder="Métodos aceitos (Pix, Cartão...)"></textarea>
+        </fieldset>
+
+        <button type="submit">Finalizar Cadastro</button>
+      </form>
+    </div>
+  </div>
+  <script src="scriptCadastroUsu.js"></script>
+
+</body>
+</html>

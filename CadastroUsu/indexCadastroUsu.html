@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
   <link rel="stylesheet" href="styleCadastroUsu.css">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
- 
+
+  <!-- Switch de tema -->
   <label class="switch">
-  <input type="checkbox" id="theme-toggle-checkbox">
-  <span class="slider"></span>
-  
-</label>
+    <input type="checkbox" id="theme-toggle-checkbox">
+    <span class="slider"></span>
+  </label>
 
-
+  <!-- Formulário -->
   <div class="form-wrapper">
     <div class="form-card">
       <div class="logo-wrapper">
@@ -24,83 +23,40 @@
         <h1 class="logo-text">AgendNow</h1>
       </div>
 
-      <h1>Cadastro</h1>
+      <h1>Faça o seu Cadastro!</h1>
 
       <form>
         <fieldset>
-          <legend>Informações Básicas</legend>
-          <input type="text" placeholder="Nome da Empresa" required>
-          <input type="text" placeholder="CNPJ" required>
-          <input type="text" placeholder="Endereço completo" required>
-          <input type="tel" placeholder="Telefone" required>
-          <input type="email" placeholder="E-mail" required>
-        </fieldset>
+          <legend>Cadastrar</legend>
+          <input type="text" placeholder="Digite seu nome completo" required>
+          <input type="email" id="email" name="email" required placeholder="seuemail@gmail.com">
+<small id="email-error" style="color: red; display: none; font-size: 0.85em;">O e-mail deve terminar com @gmail.com</small>
 
-        <!-- DESCRIÇÃO -->
-        <fieldset>
-          <legend>Sobre a Empresa</legend>
-          <textarea placeholder="Descrição da Empresa" required></textarea>
-          <textarea placeholder="Missão"></textarea>
-          <textarea placeholder="Visão"></textarea>
-        </fieldset>
+<input type="tel" placeholder="Telefone" pattern="[0-9]*" inputmode="numeric" required>
+          <input type="text" placeholder="CEP" required>
 
-        <fieldset>
-          <legend>Serviços</legend>
-          <textarea placeholder="Lista de serviços" required></textarea>
-          <input type="text" placeholder="Categorias">
-          <textarea placeholder="Preços (se aplicável)"></textarea>
-          <input type="text" placeholder="Horários de funcionamento">
-        </fieldset>
+         <!-- Campo de Senha -->
+<div class="password-wrapper">
+  <input type="password" id="senha" name="senha" required placeholder="Senha">
+  <button type="button" class="toggle-password" onclick="togglePassword('senha', this)">Mostrar</button>
+</div>
 
-        <fieldset>
-          <legend>Informações do Profissional</legend>
-          <input type="text" placeholder="Nome do responsável">
-          <input type="text" placeholder="Cargo ou função">
-          <textarea placeholder="Experiência e qualificações"></textarea>
-        </fieldset>
+<!-- Campo de Confirmar Senha -->
+<div class="password-wrapper">
+  <input type="password" id="confirmarSenha" name="confirmarSenha" required placeholder="Confirmar senha">
+  <button type="button" class="toggle-password" onclick="togglePassword('confirmarSenha', this)">Mostrar</button>
+</div>
 
-        <fieldset>
-          <legend>Mídia</legend>
-          <label>Logotipo: <input type="file"></label>
-          <label>Fotos do espaço: <input type="file" multiple></label>
-          <label>Vídeo promocional: <input type="file"></label>
-        </fieldset>
+<!-- Mensagem de erro -->
+<small id="senha-error" style="color: red; display: none; font-size: 0.85em; margin-top: -10px;">As senhas não coincidem</small>
 
-        <fieldset>
-          <legend>Avaliações</legend>
-          <textarea placeholder="Depoimentos de clientes"></textarea>
-        </fieldset>
-
-        <fieldset>
-          <legend>Políticas</legend>
-          <textarea placeholder="Política de cancelamento"></textarea>
-          <textarea placeholder="Termos de serviço e privacidade"></textarea>
-        </fieldset>
-
-        <fieldset>
-          <legend>Redes Sociais</legend>
-          <input type="url" placeholder="Facebook">
-          <input type="url" placeholder="Instagram">
-          <input type="url" placeholder="LinkedIn">
-        </fieldset>
-
-  
-        <fieldset>
-          <legend>Certificações</legend>
-          <textarea placeholder="Certificações e licenças"></textarea>
-        </fieldset>
-
-  
-        <fieldset>
-          <legend>Formas de Pagamento</legend>
-          <textarea placeholder="Métodos aceitos (Pix, Cartão...)"></textarea>
         </fieldset>
 
         <button type="submit">Finalizar Cadastro</button>
       </form>
     </div>
   </div>
-  <script src="scriptCadastroUsu.js"></script>
 
+  <script src="scriptCadastroUsu.js"></script>
 </body>
 </html>

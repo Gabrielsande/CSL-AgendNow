@@ -241,34 +241,7 @@ footer {
   color: #ffcc00;
 }
 
-/* BOTÃO FLUTUANTE WHATSAPP */
-.whatsapp-float {
-  position: fixed;
-  width: 70px;
-  height: 70px;
-  bottom: 30px;
-  right: 30px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 32px;
-  line-height: 70px;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
-  transition: background-color 0.3s ease;
-  z-index: 10000;
-}
 
-.whatsapp-float:hover,
-.whatsapp-float:focus {
-  background-color: #1ebe57;
-  text-decoration: none;
-}
-
-.whatsapp-float:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
-}
 
 /* LINKS E ICONES */
 i.fab {
@@ -295,27 +268,7 @@ nav.nav a.active {
   padding-bottom: 4px;
 }
 
-/* Botão de alternância de tema */
-.mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 10001;
-  background: #fff;
-  color: #222;
-  border: none;
-  padding: 10px 12px;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  font-size: 18px;
-}
 
-.mode-toggle:hover {
-  background: #222;
-  color: #fff;
-}
 
 /* RESPONSIVIDADE */
 @media (max-width: 900px) {
@@ -355,5 +308,160 @@ nav.nav a.active {
 
   .como-funciona ol {
     padding: 0 15px;
+  }
+}
+
+/* Botão flutuante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 2px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  line-height: 45px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+  transition: background-color 0.3s ease;
+  z-index: 10000;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  background-color: #1ebe57;
+}
+
+/* Exibe só em telas pequenas */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #004aad;
+  cursor: pointer;
+}
+
+
+
+
+/* Mostra só em telas grandes */
+.desktop-only {
+  display: inline-block;
+}
+
+/* Mostra só no celular */
+.mobile-only {
+  display: none;
+}
+
+/* Esconde e mostra conforme a largura da tela */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 85px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #004aad;
+    cursor: pointer;
+  }
+}
+
+/* Visibilidade condicional */
+.desktop-only {
+  display: inline-block;
+}
+.mobile-only {
+  display: none;
+}
+
+/* Estilo do botão hambúrguer */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #004aad;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1001;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 25%;
+    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .header-container {
+    position: relative;
   }
 }
