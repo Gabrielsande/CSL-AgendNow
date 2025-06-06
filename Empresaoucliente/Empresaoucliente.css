@@ -1,0 +1,115 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #001c55, #005ee3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Estrutura */
+.container {
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 150%;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+img.logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+
+}
+
+.conteudo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.botao {
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.botao-empresa {
+  border:2px solid  #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.botao-empresa:hover {
+  background-color: #ffffff;
+  color: #001c55;
+}
+
+.botao-cliente {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.botao-cliente:hover {
+  background-color: #ffffff;
+  color: #001c55;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .conteudo h1 {
+    font-size: 1.5rem;
+  }
+
+  .botao {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+}
+.topo .logo {
+  width: 140px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .topo .logo {
+    width: 180px;
+  }
+}
