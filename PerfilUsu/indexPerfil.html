@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personalização de Perfil</title>
+  <link rel="stylesheet" href="stylePerfil.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Personalize seu Perfil</h2>
+
+    <div class="profile-pic-wrapper">
+      <label class="profile-upload-area" for="fotoPerfil">
+        <img id="preview" src="default.jpg" " />
+      </label>
+      <input type="file" id="fotoPerfil" accept="image/*" onchange="mostrarImagem(event)" style="display: none;">
+    </div>
+
+    <!-- Botão estilizado centralizado abaixo da imagem -->
+    <div class="botao-cores-container">
+      <button id="botaoTema" title="Alterar tema" onclick="toggleCores()">🎨</button>
+    </div>
+
+    <!-- Inputs escondidos inicialmente -->
+    <div id="colorInputs" class="hidden">
+      <label for="corTema">Cor do Tema</label>
+      <input type="color" id="corTema" />
+
+      <label for="corBorda">Cor da Borda</label>
+      <input type="color" id="corBorda" value="#000000" />
+    </div>
+
+    <label for="usuario">Usuário</label>
+    <input type="text" id="usuario" value="user123" disabled />
+
+    <div class="senha-wrapper">
+      <input type="password" id="senha" value="Senha123!" readonly>
+      <button type="button" class="mostrar-btn" onclick="toggleSenha()">Mostrar</button>
+    </div>
+
+    <label for="cep">CEP</label>
+    <input type="text" id="cep" value="12345-678" disabled />
+
+    <label for="telefone">Telefone</label>
+    <input type="text" id="telefone" value="(11) 98765-4321" disabled />
+
+    <!-- Botão modo escuro/claro -->
+    <button onclick="toggleDarkMode()" class="dark-mode-toggle" id="modoBotao" aria-label="Alternar modo escuro">
+      <!-- Ícone lua (modo claro) -->
+      <svg id="iconeLua" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+      </svg>
+
+      <!-- Ícone sol (modo escuro), escondido inicialmente -->
+      <svg id="iconeSol" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="display:none;">
+        <circle cx="12" cy="12" r="5"/>
+        <g stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </g>
+      </svg>
+    </button>
+
+    <button onclick="salvar()">Salvar</button>
+    <p id="mensagemSucesso" class="mensagem-sucesso" style="display: none;">Salvo com sucesso!</p>
+
+    <h3>Atividades Recentes</h3>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#10094;</button>
+
+      <div class="carousel">
+        <div class="profile-card">
+          <img src="img/cardBarbear.jpg" alt="Perfil 1" class="carousel-img">
+          <h4>Barbearia Mello</h4>
+          <a href="#" class="visit-btn">Visitar</a>
+        </div>
+
+        <div class="profile-card">
+          <img src="img/cardFitness.jpg" alt="Perfil 2" class="carousel-img">
+          <h4>26Fit</h4>
+          <a href="#" class="visit-btn">Visitar</a>
+        </div>
+
+        <div class="profile-card">
+          <img src="img/cardService.jpg" alt="Perfil 3" class="carousel-img">
+          <h4>Pedreiros</h4>
+          <a href="#" class="visit-btn">Visitar</a>
+        </div>
+      </div>
+
+      <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="ScriptPerfil.js"></script>
+</body>
+</html>

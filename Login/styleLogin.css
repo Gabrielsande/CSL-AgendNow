@@ -2,7 +2,7 @@
   --bg-color: #000000;
   --form-bg: #0e0e2b;
   --text-color: #1a7aff;
-  --highlight: #1a7aff ;
+  --highlight: #1a7aff;
   --input-bg: #3a3a3a;
   --button-text: #000;
 }
@@ -11,7 +11,7 @@ body.light-theme {
   --bg-color: #f0f0f0;
   --form-bg: #ffffff;
   --text-color: #4c91f3;
-  --highlight:  #004aad ;
+  --highlight: #004aad;
   --input-bg: #eaeaea;
   --button-text: #fff;
 }
@@ -22,6 +22,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
+  
 }
 
 /* Botão de alternância de tema */
@@ -40,6 +41,32 @@ body {
   box-shadow: 0 0 10px var(--highlight);
   transition: background 0.3s, color 0.3s;
 }
+
+/* Logo + texto “AgendNow” no canto superior esquerdo */
+.logo-topo {
+  position: absolute;
+  top: 15px;
+  left: 90px;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  z-index: 10;
+}
+
+.logo-img {
+  width: 50px; /* ou ajuste como preferir */
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #4c91f3;
+  margin: 0;
+}
+
 
 /* Layout principal */
 .container {
@@ -135,25 +162,29 @@ body {
   background-color: #00cc6a;
 }
 
-/* Logo no topo esquerdo */
-.logo-topo {
- display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 85px;
+.login-title-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
 }
 
-/* Quadrado branco fixo */
-.logo-background {
-  height: auto;
-  max-height: 170px; /* Aumentado */
-  width: auto;
-  object-fit: contain;
+.login-title-container::before {
+  content: "";
+  background-image: url("imgLogin/computadorAzul.png"); /* coloque o caminho correto aqui */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.30; /* controla a ofuscação */
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  height: 450px;
+  z-index: 0;
 }
 
-/* Imagem da logo maior */
-.logo-img {
-  width:180px ;
-  height: 180px;
-  object-fit: contain;
+.login-title-container h1 {
+  position: relative;
+  z-index: 1;
 }
